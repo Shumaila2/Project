@@ -1,0 +1,212 @@
+/* Star container styling for fixed background stars */
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  /* Layer it behind all other content */
+}
+#title{
+  letter-spacing: 0.5px;
+  color: #FFFCE1;
+  font-style: italic;
+  font-family:cursive;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+  animation: title-bounce 1s infinite alternate;
+}
+
+@keyframes title-bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-23px);
+  }
+}
+
+@media (max-width: 768px) {
+  #title {
+    font-size: 1.5rem;
+    /* Smaller font on smaller screens */
+  }
+}
+
+#ufo-on-text{
+  position: absolute;
+  align-items: center;
+  transform: translateX(-50%);
+  width: 222px;
+  top: -3%;
+}
+
+/* Light beam effect */
+.light-beam {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(77, 228, 255, 0.5), rgba(255, 255, 255, 0));
+  z-index: -1;
+  clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+  opacity: 0.6;
+}
+
+img[src*="astronaut-earth.png"]{
+  width: 100px;
+  position: absolute;
+  left: 5%;
+  opacity: 0.8;
+  animation: main-side-decor-bounce 3s infinite linear;
+}
+
+img[src*="astronaut-balloon.png"] {
+  width: 100px;
+  position: absolute;
+  opacity: 0.8;
+  animation: main-side-decor-bounce 3s infinite linear;
+}
+
+img[src*="astronaut-planet.png"] {
+  width: 100px;
+  position: absolute;
+  opacity: 0.8;
+  left: 20%;
+  top: 4%;
+  animation: main-side-decor-bounce 3s infinite linear;
+}
+
+img[src*="astronaut-sitting.png"] {
+  width: 100px;
+  position: absolute;
+  opacity: 0.8;
+  right: 20%;
+  top: 4%;
+  animation: main-side-decor-bounce 3s infinite linear;
+}
+
+img[src*="astronaut-spaceship.png"] {
+  width: 100px;
+  position: absolute;
+  opacity: 0.8;
+  right: 4%;
+  top: 7%;
+  animation: main-side-decor-bounce 3s infinite linear;
+}
+
+@keyframes main-side-decor-bounce {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50%{
+    transform: scale(0.8, 0.8);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@media (max-width: 575.98px) {
+  img[src*="astronaut-earth.png"] {
+    display: none;
+  }
+  img[src*="astronaut-balloon.png"] {
+    width: 75px;
+  }
+  img[src*="astronaut-planet.png"] {
+    display: none;
+  }
+  img[src*="astronaut-sitting.png"] {
+    width: 75px;
+    left: 12%;
+    top: 4%;
+  }
+  img[src*="astronaut-spaceship.png"] {
+    width: 75px;
+    right: 9%;
+    top: 3%;
+  }
+}
+
+.roaming-element{
+  position: absolute;
+  animation: roam-around 500s infinite linear, rotate 22s infinite linear;
+}
+
+.roaming-element:hover{
+  animation-play-state: paused;
+}
+
+@keyframes roam-around{
+  0% {
+      left: 0;/* Start at the top-left corner */
+      top: 0;
+      opacity: 1;
+      /* Start visible */
+    }
+
+  20% {
+    left: 100%; /* Move to the bottom-right corner */
+    top: 100%;/* Move down to the bottom edge */
+    transform: translate(-100%, -100%); /* Adjust for element's width and height */
+    opacity: 0; /* Fade out */
+  }
+
+  40% {
+    left: 50%; /* Move horizontally to the center */
+    top: 100%; /* Stay at the bottom edge */
+    transform: translate(-50%, -100%); /* Center horizontally, adjust for height */
+    opacity: 1; /* Fade back in */
+  }
+
+  60% {
+    left: 0; /* Move to the left side, halfway down */
+    top: 50%;
+    transform: translate(0, -50%); /* Center vertically, adjust for height */
+    opacity: 0; /* Fade out */
+  }
+
+  97% {
+    left: 100%; /* Move to the top-right corner */
+    top: 30%;
+    transform: translate(-100%, 0); /* Adjust horizontally for width */
+    opacity: 1; /* Fade back in */
+  }
+
+  100% {
+    left: 100%; /* Remain in the top-right corner */
+    top: 30%;
+    transform: translate(-100%, 0); /* Adjust horizontally for width */
+    opacity: 0; /* Fade out */
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.slide{
+  top: -55%;
+  z-index: -1;
+}
+.check{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 33%;
+  top: 40%;
+
+}
