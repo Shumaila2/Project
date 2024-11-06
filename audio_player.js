@@ -1,4 +1,20 @@
 $(function () {
+  var backgroundAudio = document.getElementById("background-audio"); // Background audio element
+  var playerAudio = new Audio(); // Audio element for the music player
+
+  var isUserInteracted = false; // Track if the user has interacted
+
+  // Function to initialize background music on the first user interaction
+  function startBackgroundAudio() {
+    if (!isUserInteracted) {
+      isUserInteracted = true;
+      backgroundAudio.play(); // Start the background music on interaction
+    }
+  }
+
+  // Add an event listener for any interaction that triggers background audio
+  $(document).on("click", startBackgroundAudio);
+
   var playerTrack = $("#player-track"),
     bgArtwork = $("#bg-artwork"),
     bgArtworkUrl,
@@ -30,26 +46,21 @@ $(function () {
     buffInterval = null,
     tFlag = false,
     albums = [
-      "Dawn",
-      "Me & You",
-      "Electro Boy",
-      "Home",
-      "Proxy (Original Mix)"
+      "Birthday to Remember",
+      "Friendship",
+      "Into the Woods"
     ],
     trackNames = [
-      "Skylike - Dawn",
-      "Alex Skrindo - Me & You",
-      "Kaaze - Electro Boy",
-      "Jordan Schor - Home",
-      "Martin Garrix - Proxy"
+      "Lifeisnurul - Happy Birthday",
+      "RomanSenykMusic - Friendship",
+      "Satulangit - Into the Woods"
     ],
-    albumArtworks = ["_1", "_2", "_3", "_4", "_5"],
+    albumArtworks = ["_1", "_2", "_3"],
     trackUrl = [
-      "https://www.youtube.com/watch?v=xoWxv2yZXLQ&list=PLWL923jZIGrtOTDYPnk7wYo931GIS2-CD",
-      "https://github.com/Shumaila2/HTML-CSS/raw/refs/heads/main/Project/images/A%20Birthday%20to%20Remember.mp3",
-      "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/3.mp3",
-      "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/4.mp3",
-      "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/music/5.mp3"
+      "https://raw.githubusercontent.com/Shumaila2/Project/main/images/A%20Birthday%20to%20Remember.mp3",
+      "https://raw.githubusercontent.com/Shumaila2/Project/main/images/Friendship.mp3",
+      "https://raw.githubusercontent.com/Shumaila2/Project/main/images/Into%20the%20Woods.mp3"
+
     ],
     playPreviousTrackButton = $("#play-previous"),
     playNextTrackButton = $("#play-next"),
@@ -62,14 +73,26 @@ $(function () {
         albumArt.addClass("active");
         checkBuffering();
         i.attr("class", "fas fa-pause");
+
+        backgroundAudio.pause();
+
         audio.play();
+
+        playerAudio.play();
       } else {
         playerTrack.removeClass("active");
         albumArt.removeClass("active");
         clearInterval(buffInterval);
         albumArt.removeClass("buffering");
         i.attr("class", "fas fa-play");
+
+        // Resume background music when music player pauses
+        backgroundAudio.play();
+        
         audio.pause();
+
+        playerAudio.pause();
+
       }
     }, 300);
   }
@@ -244,7 +267,19 @@ $(function () {
     playNextTrackButton.on("click", function () {
       selectTrack(1);
     });
+
+    // Automatically play the next track when the current one finishes
+    $(audio).on("ended", function () {
+      selectTrack(1);  // Move to the next track
+      audio.play();     // Start playing the next track
+    });
+
+    playerAudio.addEventListener("ended", function () {
+      // Resume background audio once music player track ends
+      backgroundAudio.play();
+    });
   }
 
   initPlayer();
-});
+
+}); 

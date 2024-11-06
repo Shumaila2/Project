@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="design.css">
 
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
-    <link rel="stylesheet" href="audio_player.css">
-
+    <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Main Web Page CSS-->
+    <link rel="stylesheet" href="design.css">
+
+    <!--Font CSS-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+    <link rel="stylesheet" href="audio_player.css"><!--Auio PLayer CSS-->
+    <link rel="stylesheet" href="alien-game.css"><!--Alien Game CSS-->
+    <link rel="stylesheet" href="magic-ball.css"><!--Magic Ball Game CSS-->
+    <!--Quote CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="quote.css">
+
 </head>
 
 <body style="background-color: #0e100f;">
@@ -31,8 +43,16 @@
         <div class="text-center">
             <img id="ufo-on-text" alt="Space-ship" src="images/ufo-lighting.png">
             <div class="light-beam"></div>
-            <!--Happy Birthday Prajwal Shetty -->
-            <p id="title" class="h1 fw-bold">Jolly Questday Profit Shelly</p>
+            <!--Jolly Questday Profit Shelly-->
+            <p id="title" class="h1 fw-bold">Happy Birthday Prajwal Shetty</p>
+
+            <!--I may not have all the stars in the galaxy, but I put a few here just for you. I hope this brings a smile to your day!-->
+            <p id="des">
+                I may not have all the stars in the galaxy, but I put a few here just for you. I hope this brings a smile to your day!
+            </p>
+
+            <hr style="width: 75%; margin: 0 auto;">
+
         </div>
         <!--Side Decor-->
         <div>
@@ -43,44 +63,47 @@
             <img src="images/astronaut-spaceship.png" alt="Astronaut flying with Spaceship">
         </div>
     </div>
-
-    <div id="app-cover">
-        <div id="player">
-            <div id="player-track">
-                <div id="album-name"></div>
-                <div id="track-name"></div>
-                <div id="track-time">
-                    <div id="current-time"></div>
-                    <div id="track-length"></div>
-                </div>
-                <div id="s-area">
-                    <div id="ins-time"></div>
-                    <div id="s-hover"></div>
-                    <div id="seek-bar"></div>
-                </div>
-            </div>
-            <div id="player-content">
-                <div id="album-art">
-                    <img src="/images/birthday-song.png"
-                        class="active" id="_1">
-                    <img src="/images/freindship-song.png" id="_2">
-                    <img src="/images/woods-song.png" id="_3">
-                    <div id="buffer-box">Buffering ...</div>
-                </div>
-                <div id="player-controls">
-                    <div class="control">
-                        <div class="button" id="play-previous">
-                            <i class="fas fa-backward"></i>
-                        </div>
+    
+    <!--Music Player-->
+    <div class="music-player-container justify-content-center">
+        <div id="app-cover">
+            <div id="player">
+                <div id="player-track">
+                    <div id="album-name"></div>
+                    <div id="track-name"></div>
+                    <div id="track-time">
+                        <div id="current-time"></div>
+                        <div id="track-length"></div>
                     </div>
-                    <div class="control">
-                        <div class="button" id="play-pause-button">
-                            <i class="fas fa-play"></i>
-                        </div>
+                    <div id="s-area">
+                        <div id="ins-time"></div>
+                        <div id="s-hover"></div>
+                        <div id="seek-bar"></div>
                     </div>
-                    <div class="control">
-                        <div class="button" id="play-next">
-                            <i class="fas fa-forward"></i>
+                </div>
+                <div id="player-content">
+                    <div id="album-art">
+                        <img src="/images/birthday-song.png"
+                            class="active" id="_1">
+                        <img src="/images/freindship-song.png" id="_2">
+                        <img src="/images/woods-song.png" id="_3">
+                        <div id="buffer-box">Buffering ...</div>
+                    </div>
+                    <div id="player-controls">
+                        <div class="control">
+                            <div class="button" id="play-previous">
+                                <i class="fas fa-backward"></i>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="button" id="play-pause-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="button" id="play-next">
+                                <i class="fas fa-forward"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,79 +111,52 @@
         </div>
     </div>
 
-    <!--Carousel-->
+    <!-- Carousel -->
     <div class="slide row container-fluid d-flex justify-content-center">
-        <div class="col-md-10 col-sm-10">
+        <div class="col-md-9 col-sm-10">
             <div id="carouselId" class="carousel slide shadow-lg rounded-5" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="First slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="1"
-                        aria-label="Second slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="2"
-                        aria-label="Third slide"
-                    ></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="First slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="3" aria-label="Fourth slide"></li>
                 </ol>
                 <div class="carousel-inner rounded-5 shadow-lg" role="listbox">
                     <div class="carousel-item active">
-                        <img
-                            src="images/1.jpg"
-                            class="w-100 d-block"
-                            alt="First slide"
-                        />
+                        <img src="images/1.png" class="w-100 d-block" alt="First slide" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>First Slide</h3>
-                            <p>Description</p>
+                            <h4>Promises Under the Stars 🌌</h4>
+                            <p>That time we planned to keep the birthday countdown running… and then the universe hit 'pause!' 🚀</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img
-                            src="images/2.jpg"
-                            class="w-100 d-block"
-                            alt="Second slide"
-                        />
+                        <img src="images/2.png" class="w-100 d-block" alt="Second slide" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Title</h3>
-                            <p>Description</p>
+                            <h4>The Disappearing Act 🎭</h4>
+                            <p>When I went MIA and you turned into a detective! 🔍</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img
-                            src="images/3.jpg"
-                            class="w-100 d-block"
-                            alt="Third slide"
-                        />
+                        <img src="images/3.png" class="w-100 d-block" alt="Third slide" />
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Title</h3>
-                            <p>Description</p>
+                            <h4>The Temple Tour Transformation 🕌✨</h43>
+                            <p>When a fever and a temple tour turned into a social media sabbatical! 📵</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/4.png" class="w-100 d-block" alt="Third slide" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4>The Haa Chronicles 😂</h4>
+                            <p>When ‘haa’ became our secret language! 🗣️✨</p>
                         </div>
                     </div>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="prev"
-                >
+                <button class="carousel-control-prev" style="width: 5%;" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="next"
-                >
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -168,10 +164,93 @@
         </div>
     </div>
 
+
+    <!--Background Music-->
+    <audio id="background-audio" autoplay loop>
+        <source src="images/Space_Ambient_Music_•_[__DEEP_SPACE_JOURNEY__]_•(128k).mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!--Magic Ball-->
+    <div class="magic-ball-container">
+        <h1 id="magic-ball-title">Ask the Magic 8 Ball</h1>
+        <input type="text" id="question" placeholder="Type your question here...">
+        <div id="magic8ball">
+            <div id="answer">Ask me anything!</div>
+        </div>
+        <button onclick="shakeMagic8Ball()">Ask the Magic 8 Ball</button>
+        
+        <div class="magic-ball-des">
+            <p>Welcome to the Magic 8 Ball, where your burning questions meet the wisdom of the cosmos! 🎱✨</p><br>
+            
+            <p>As I celebrate your birthday, I thought, what better way to embrace the stars than with a little astrology flair? 🤔 After
+            all, you once mentioned you had a knack for reading the stars, and who am I to question your celestial insights? Just
+            give it a shake, 😵 and let's see what the universe has to say about your birthday wishes 🎂!</p><br>
+            
+            <p>Will you get that cake 🍰 you’ve been dreaming of? Should you finally go for that second 🍕 slice of pizza? Or perhaps the
+            universe has bigger plans for you—like taking over the galaxy one birthday at a time!</p><br>
+            
+            <p>Remember, the Magic 8 Ball is always here for you, just like I am—ready 😁 to offer questionable advice and a sprinkle of
+            fun on your special day! So go ahead, ask your question, and let’s see what cosmic secrets unfold.🤨</p></p>
+        </div>
+    </div>
+
+    <!--Quote Section-->
+    <div class="box"><i class="fas fa-quote-left fa2"></i>
+    <div class="text"><i class="fas fa-quote-right fa1"></i>
+        <div>
+            <h4>Another Year Closer?</h4>
+            <p>It's just the universe reminding you that you're a year closer to becoming a
+            legend—or maybe just closer to the cosmic finish line! </p>
+        </div>
+    </div>
+    </div>
+
+    <div class="box" style="left: 50%;"><i class="fas fa-quote-left fa2"></i>
+    <div class="text"><i class="fas fa-quote-right fa1"></i>
+        <div>
+            <h4>Time for Some Sweet Wisdom</h4>
+            <p>Birthdays are the universe's way of telling you to eat more cake!</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="box" style="left: 80%;"><i class="fas fa-quote-left fa2"></i>
+        <div class="text"><i class="fas fa-quote-right fa1"></i>
+            <div>
+                <h4>Cosmic Approval</h4>
+                <p>The stars aligned for this day, so let’s party like it’s a cosmic celebration! After all, the universe doesn’t go out of
+                its way every day!</p>
+            </div>
+        </div>
+    </div>
+
     <!--Footer-->
     <footer>
+        <!--Alien Game-->
+        <div class="container align-container">
+            <div class="row alien-game">
+                <input class='fly-1' id='fly-1' tabindex='-1' type='checkbox'>
+                <label for='fly-1'></label>
+                <input class='fly-2' id='fly-2' tabindex='-1' type='checkbox'>
+                <label for='fly-2'></label>
+                <input class='fly-3' id='fly-3' tabindex='-1' type='checkbox'>
+                <label for='fly-3'></label>
+                <div class='description'>
+                    <h1 id="alien-title">Alien Click Defense</h1>
+                    <p>Your mission: Click the aliens to keep the birthday vibes intact!</p>
+                </div>
+                <div class='congrats'>
+                    <h1>Awesome!<br />You're A Click Hero!</h1>
+                </div>
+            </div>
+        </div>
+        <!--Ground-->
         <img src="images/page-ground.png" alt="Page Landing Ground" style="width: 100%;">
     </footer>
+
+    <!--Magic Ball Js-->
+    <script src="magic_ball.js"></script>
 
     <!--Blinking Star JS-->
     <script src="blinking_stars.js"></script>
@@ -181,8 +260,8 @@
     <script src="audio_player.js"></script>
 
     <!--Confetti JS-->
-    <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
-    <script src="confetti_fall.js"></script>-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src="confetti_fall.js"></script>
 
     <!--Bootstarp CDN Link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
