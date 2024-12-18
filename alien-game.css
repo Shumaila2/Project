@@ -2480,8 +2480,7 @@ input[class^=fly] + label {
     left: 81%;
   }
 }
-.description,
-.congrats {
+.description{
   position: absolute;
   top: 30%;
   left: 50%;
@@ -2496,14 +2495,32 @@ input[class^=fly] + label {
   transform: translateX(-50%) translateY(-50%);
 }
 
+.congrats {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 100%;
+  z-index: 9;
+  padding: 0 2rem;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: translateX(-50%) translateY(-50%);
+  color: rgba(41, 255, 105);
+}
+
 h1#alien-title {
   font-weight: normal;
   font-size: 3rem;
-  text-shadow: 0 0 3rem rgba(41, 255, 106, 0.6);
+  color: rgb(112, 112, 112);
+  text-shadow: 0 0 3rem rgba(41, 255, 105, 0.788);
 }
 
-p {
+p#alien-des {
   font-size: 1.5rem;
+  color: rgb(112, 112, 112);
 }
 
 .congrats {
