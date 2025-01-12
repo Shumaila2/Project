@@ -247,6 +247,11 @@ hr {
   z-index: -1;
 }
 
+.carousel {
+  z-index: 10;
+  /* Ensures it's on top */
+}
+
 /*Align Game*/
 .align-container{
   position: relative;
